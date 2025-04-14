@@ -1,0 +1,8 @@
+MAIN_FILE="*.c"
+
+COMPILER_FLAGS="-Werror -Wall -std=c90"
+
+LINKER_FLAGS=""
+
+
+cc -o app $MAIN_FILE $COMPILER_FLAGS $LINKER_FLAGS
