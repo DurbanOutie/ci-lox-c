@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#include "chunk.h"
 #include "common.h"
 #include "compiler.h"
 #include "debug.h"
@@ -92,9 +93,20 @@ static InterpretResult run(){
 }
 
 InterpretResult interpret(const char *source){
-    /*vm.chunk = chunk;*/
-    /*vm.ip = vm.chunk->code;*/
-    return run();
+    Chunk chunk;
+    initChunk(&chunk);
+
+    if(!compile(source, &chunk)){
+        freeChunk(&chunk);
+        return INTERPRET_COMPILE_ERROR;
+    }
+
+    vm.chunk = &chunk;
+    vm.ip = vm.chunk->code;
+
+    InterpretResult result = run();
+    freeChunk(&chunk);
+    return result;
 }
 
 
