@@ -221,9 +221,5 @@ Token scanToken(){
             break;
     }
 
-
-
-
-
     return errorToken("Unexpected character.");
 }
