@@ -392,10 +392,9 @@ static void expression(){
 }
 
 static void block(){
-    while(!check(TOKEN_RIGHT_BRACE) && !check(EOF)){
+    while(!check(TOKEN_RIGHT_BRACE) && !check(TOKEN_EOF)){
         declaration();
     }
-
     consume(TOKEN_RIGHT_BRACE, "Expect '}' after block.");
 }
 
