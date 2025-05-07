@@ -83,6 +83,7 @@ static void concatenate(){
 
 
 static InterpretResult run(){
+    //return INTERPRET_RUNTIME_ERROR;
 #define READ_BYTE() (*vm.ip++)
 #define READ_SHORT() (vm.ip += 2, (uint16_t)((vm.ip[-2] << 8) | vm.ip[-1]))
 #define READ_CONSTANT() (vm.chunk->constants.values[READ_BYTE()])

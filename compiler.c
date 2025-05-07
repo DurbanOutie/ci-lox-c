@@ -474,11 +474,7 @@ static void forStatement(){
         expressionStatement();
     }
 
-
-    consume(TOKEN_SEMICOLON, "Expect ';'.");
-
     int loopStart = currentChunk()->count;
-
     int exitJump = -1;
     if(!match(TOKEN_SEMICOLON)){
         expression();
@@ -486,8 +482,6 @@ static void forStatement(){
         exitJump = emitJump(OP_JUMP_IF_FALSE);
         emitByte(OP_POP);
     }
-
-
     if(!match(TOKEN_RIGHT_PAREN)){
         int bodyJump = emitJump(OP_JUMP);
         int incrementStart = currentChunk()->count;
@@ -507,7 +501,6 @@ static void forStatement(){
         patchJump(exitJump);
         emitByte(OP_POP);
     }
-
     endScope();
 }
 
