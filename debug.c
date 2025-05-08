@@ -42,6 +42,7 @@ int disassembleInstruction(Chunk *chunk, int offset){
 
     uint8_t instruction = chunk->code[offset];
     switch(instruction){
+        case OP_CALL:            return byteInstruction("OP_CALL",             chunk, offset);
         case OP_GET_LOCAL:       return byteInstruction("OP_GET_LOCAL",        chunk, offset);
         case OP_SET_LOCAL:       return byteInstruction("OP_SET_LOCAL",        chunk, offset);
         case OP_CONSTANT:        return constantInstruction("OP_CONSTANT",      chunk, offset);
