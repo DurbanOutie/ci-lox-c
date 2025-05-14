@@ -1,6 +1,6 @@
 MAIN_FILE="*.c"
 
-COMPILER_FLAGS="-Werror -Wall -std=c99"
+COMPILER_FLAGS="-g -Werror -Wall -std=c99"
 
 LINKER_FLAGS=""
 
