@@ -1,11 +1,21 @@
-fun outer() {
-  var x = "outside";
-  fun inner() {
-    print x;
-  }
+var a = "Hello1";
+var b = "Hello2";
+var c = "Hello3";
+var d = "Hello4";
+var e = "Hello5";
+var f = "Hello6";
+var g = "Hello7";
+var h = "Hello8";
+var i = "Hello9";
+var j = "Hello10";
+var k = "Hello11";
+var l = "Hello12";
+var m = "Hello13";
+var n = "Hello14";
+var o = "Hello15";
+var p = "Hello16";
+var q = "Hello17";
+var r = "Hello18";
+var s = "Hello19";
 
-  return inner;
-}
-
-var closure = outer();
-closure();
+print a + b;

@@ -1,1 +1,2 @@
+clear
 ./app test.clox
